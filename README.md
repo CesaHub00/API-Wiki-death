@@ -10,4 +10,4 @@ The database will contain:
 Contains the main part of the project: the APIs, the parsing functions and the build of the database.
 
 #### [*Query_Wiki_deaths*](Query_Wiki_deaths.py)
-Contains a code to read the database and creating a graph with deaths per year.
+Contains an algorithm to read the database and creating a graph with deaths per year.
