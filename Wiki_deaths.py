@@ -19,7 +19,8 @@ def main():
             parsed_page = parse_page(page.text, month, years)
             tot_data[year][month] = parsed_page
             print("Added",sum(len(v) for v in parsed_page.values()),"deaths")
-
+            
+    # create file and write on it
     with open("Death_File.json", "w") as file_json:
         json.dump(tot_data, file_json, indent=3)
 
