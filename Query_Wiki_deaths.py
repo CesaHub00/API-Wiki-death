@@ -39,7 +39,7 @@ for year in data.keys():
     
     tot_deaths += tot_death_year 
 
-
+# create plot
 plt.plot(dic_tot_death_year.keys(), dic_tot_death_year.values())
 plt.suptitle("Death in year")
 # plt.plot(dic_tot_death_month.keys(), dic_tot_death_month.values())
