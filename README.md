@@ -1,5 +1,5 @@
 ## Project "Parsing Wikipedia: wiki-death dataset"
-Program to build a database (in json) with the Wikipedia's API for all the famous deaths from 1992 to 2022.
+Algorithm to build a database (in json) with the Wikipedia's API for all the famous deaths from 1992 to 2022.
 
 The database will contain:
 - Death date
