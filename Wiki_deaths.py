@@ -7,9 +7,9 @@ def main():
 
     months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     years = [x for x in range(1992, 2023)]
-    
+
     check_pages(wiki, years, month)
-    
+
     tot_data = {}
     for year in years:
         tot_data[year] = {}
@@ -19,7 +19,7 @@ def main():
             parsed_page = parse_page(page.text, month, years)
             tot_data[year][month] = parsed_page
             print("Added",sum(len(v) for v in parsed_page.values()),"deaths")
-            
+
     # create file and write on it
     with open("Death_File.json", "w") as file_json:
         json.dump(tot_data, file_json, indent=3)
@@ -55,7 +55,7 @@ def parse_page(text , months, years):
             parsed_line = parse_line(line)
             if parsed_line is not None:
                 day_to_death[day-1].append(parsed_line)
-                
+
     return day_to_death
 
 
@@ -63,17 +63,17 @@ def parse_page(text , months, years):
 def parse_line(line):
     info_dic = {}
     line_list = line.strip(".").split(", ")
-    
+
     if len(line_list) > 1:
         info_dic["Name"] = line_list[0]
-        
+
         try:
             info_dic["Age"] = int(line_list[1])
         except ValueError as e:
             return None
-        
+
         info_dic["Other_info"] = line_list[2:]
-        
+
         return info_dic
     else:
         return None
